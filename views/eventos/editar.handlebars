@@ -1,0 +1,20 @@
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>Editar Evento</title>
+	</head>
+	<body>
+		<h1>Editar Evento</h1>
+		<form action='/eventos/{{evento.id}}' method='POST'>
+			<label for='nome'>Nome:</label>
+			<input type='text' id='nome' name='nome' value='{{evento.nome}}' /><br />
+			<label for='data'>Data:</label>
+			<input type='date' id='data' name='data' value='{{evento.data}}' /><br />
+			<label for='local'>Local:</label>
+			<input type='text' id='local' name='local' value='{{evento.local}}' /><br
+			/>
+			<button type='submit'>Salvar</button>
+		</form>
+	</body>
+</html>

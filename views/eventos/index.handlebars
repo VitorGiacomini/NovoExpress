@@ -1,0 +1,39 @@
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<link rel='stylesheet' href='/styles.css' />
+		<title>Lista de Eventos</title>
+	</head>
+	<body>
+		<header>
+			<h1 class='titulo'>Lista de Eventos</h1>
+		</header>
+
+		<main>
+			<ul>
+				{{#each eventos}}
+					<li>
+						<strong>{{this.nomeEvento}}</strong>
+						-
+						{{this.dataEvento}}
+						-
+						{{this.horaEvento}}
+						<a href='/eventos/{{this.id}}'>Detalhes</a>
+						<a href='/eventos/{{this.id}}/editar'>Editar</a>
+						<form action='/eventos/{{this.id}}' method='POST'>
+							<input type='hidden' name='_method' value='DELETE' />
+							<button type='submit'>Excluir</button>
+						</form>
+					</li>
+				{{/each}}
+			</ul>
+
+			<a href='/eventos/novo' class='botaoCadastrar'>Adicionar Novo Evento</a>
+		</main>
+
+		<footer>
+			<p>Seu rodapé aqui.</p>
+		</footer>
+	</body>
+</html>
